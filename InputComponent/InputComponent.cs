@@ -18,24 +18,47 @@ namespace HelloMonoGame.Input
     public class InputComponent : GameComponent
     {
 		
-        public event InputDelegate OnTouch;
+        public event InputDelegate OnTap;
+        public event InputDelegate OnUp;
+        public event InputDelegate OnDown;
+        public event InputDelegate OnLeft;
+        public event InputDelegate OnRight;
 
         public InputComponent(Game game)
             : base(game)
         {
-			
+            TouchPanel.EnabledGestures = 
+                GestureType.Tap |
+            GestureType.Flick;
         }
-
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            TouchCollection touchState = TouchPanel.GetState();
-            if (touchState.AnyTouch())
+            Tuple<GestureType, Vector2> flickedResult = TouchCollectionExtensions.WasFlicked();
+            if (flickedResult != null)
             {
-                if (this.OnTouch != null)
+                if (flickedResult.Item1 == GestureType.Tap)
+                    this.OnTap();
+                else
                 {
-                    this.OnTouch();
+                    Vector2 flickSpeed = flickedResult.Item2;
+                    if (flickSpeed.Y > 0)
+                    {
+                        this.OnUp();
+                    }
+                    else if (flickSpeed.Y < 0)
+                    {
+                        this.OnDown();
+                    }
+                    else if (flickSpeed.X > 0)
+                    {
+                        this.OnLeft();
+                    }
+                    else
+                    {
+                        this.OnRight();
+                    }
                 }
             }
         }

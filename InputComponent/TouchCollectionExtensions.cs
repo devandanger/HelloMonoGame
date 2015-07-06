@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework;
 
 namespace HelloMonoGame.Input
 {
@@ -16,6 +17,21 @@ namespace HelloMonoGame.Input
             }
             return false;
         }
+
+        public static Tuple<GestureType, Vector2> WasFlicked()
+        {
+            while (TouchPanel.IsGestureAvailable)
+            {
+                GestureSample gesture = TouchPanel.ReadGesture();
+                switch (gesture.GestureType)
+                {
+                    case GestureType.Tap:
+                        return new Tuple<GestureType, Vector2>(gesture.GestureType, Vector2.Zero);
+                    case GestureType.Flick:
+                        return new Tuple<GestureType, Vector2>(gesture.GestureType, gesture.Delta);
+                }
+            }
+            return null;
+        }
     }
 }
-

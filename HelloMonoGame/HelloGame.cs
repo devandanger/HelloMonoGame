@@ -18,18 +18,44 @@ namespace HelloMonoGame
     public class HelloGame : BaseGame
     {
         private bool whichOne;
+        private Color backGroundColor;
 
         protected override void Initialize()
         {
             base.Initialize();
+            backGroundColor = Color.CornflowerBlue;
             InputComponent inputComponent = new InputComponent(this);
-            inputComponent.OnTouch += OnInput;
+            inputComponent.OnTap += InputComponent_OnTap;
+            inputComponent.OnDown += InputComponent_OnDown;
+            inputComponent.OnUp += InputComponent_OnUp;
+            inputComponent.OnLeft += InputComponent_OnLeft;
+            inputComponent.OnRight += InputComponent_OnRight;
             this.Components.Add(inputComponent);
         }
 
-        public void OnInput()
+        void InputComponent_OnRight()
         {
-            whichOne = !whichOne;
+            backGroundColor = Color.Red;
+        }
+
+        void InputComponent_OnLeft()
+        {
+            backGroundColor = Color.Lavender;
+        }
+
+        void InputComponent_OnUp()
+        {
+            backGroundColor = Color.Violet;
+        }
+
+        void InputComponent_OnDown()
+        {
+            backGroundColor = Color.DodgerBlue;
+        }
+
+        public void InputComponent_OnTap()
+        {
+            backGroundColor = Color.Green;
         }
 
         protected override void Update(GameTime gameTime)
@@ -40,15 +66,7 @@ namespace HelloMonoGame
         protected override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
-
-            if (whichOne)
-            {
-                this.DefaultGraphicsDeviceManager.GraphicsDevice.Clear(Color.Green);
-            }
-            else
-            {
-                this.DefaultGraphicsDeviceManager.GraphicsDevice.Clear(Color.Red);
-            }
+            this.DefaultGraphicsDeviceManager.GraphicsDevice.Clear(backGroundColor);
         }
     }
 }
