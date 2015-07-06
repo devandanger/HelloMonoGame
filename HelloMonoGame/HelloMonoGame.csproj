@@ -90,15 +90,19 @@
     <None Include="packages.config" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Default.png" />
-    <BundleResource Include="GameThumbnail.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\InputComponent\InputComponent.csproj">
       <Project>{25E2B45F-AB5B-4B05-871E-38C1BE4C77CB}</Project>
       <Name>InputComponent</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\GameThumbnail.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\monogame%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\monogame%40retinae.png" />
   </ItemGroup>
 </Project>
