@@ -5,13 +5,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Input.Touch;
-using HelloMonoGame.Components.InputComponent;
 using HelloMonoGame.Common;
+using HelloMonoGame.Components.InputComponent;
 
 #endregion
 
-namespace HelloMonoGame
+namespace HelloMonoGameAndroid
 {
     /// <summary>
     /// This is the main type for your game.

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 
 #endregion
 
-namespace HelloMonoGame.Input
+namespace HelloMonoGame.Components.InputComponent
 {
     public delegate void InputDelegate();
     /// <summary>

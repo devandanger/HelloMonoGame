@@ -5,23 +5,21 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
-using HelloMonoGame.Input;
+using HelloMonoGame.Components.InputComponent;
 
 #endregion
 
-namespace HelloMonoGame
+namespace HelloMonoGame.Common
 {
     public class BaseGame : Game
     {
         protected GraphicsDeviceManager DefaultGraphicsDeviceManager { get; set; }
 
-        SpriteBatch spriteBatch;
-
         public BaseGame()
         {
             this.DefaultGraphicsDeviceManager = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";	            
-            this.DefaultGraphicsDeviceManager.IsFullScreen = true;	
+            Content.RootDirectory = "Content";              
+            this.DefaultGraphicsDeviceManager.IsFullScreen = true;  
         }
 
         protected override void Update(GameTime gameTime)
@@ -29,12 +27,13 @@ namespace HelloMonoGame
             // For Mobile devices, this logic will close the Game when the Back button is pressed
             // Exit() is obsolete on iOS
             #if !__IOS__
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-			Keyboard.GetState ().IsKeyDown (Keys.Escape)) {
-			Exit ();
-			}
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+                Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                Exit();
+            }
             #endif
-            // TODO: Add your update logic here			
+            // TODO: Add your update logic here         
             base.Update(gameTime);
         }
 

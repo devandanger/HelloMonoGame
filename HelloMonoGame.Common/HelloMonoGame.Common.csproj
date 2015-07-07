@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{25E2B45F-AB5B-4B05-871E-38C1BE4C77CB}</ProjectGuid>
+    <ProjectGuid>{7A50A013-0E77-4A98-9961-9182AD7A551B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>InputComponent</RootNamespace>
-    <AssemblyName>InputComponent</AssemblyName>
+    <RootNamespace>HelloMonoGame.Common</RootNamespace>
+    <AssemblyName>HelloMonoGame.Common</AssemblyName>
     <TargetFrameworkProfile>Profile158</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -30,8 +30,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="InputComponent.cs" />
-    <Compile Include="TouchCollectionExtensions.cs" />
+    <Compile Include="Game1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -41,5 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InputComponent\HelloMonoGame.Components.InputComponent.csproj">
+      <Project>{25E2B45F-AB5B-4B05-871E-38C1BE4C77CB}</Project>
+      <Name>HelloMonoGame.Components.InputComponent</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

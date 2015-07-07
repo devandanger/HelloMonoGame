@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework;
 
-namespace HelloMonoGame.Input
+namespace HelloMonoGame.Components.InputComponent
 {
     public static class TouchCollectionExtensions
     {

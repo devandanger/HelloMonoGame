@@ -82,7 +82,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HelloGame.cs" />
-    <Compile Include="BaseGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -92,9 +91,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\InputComponent\InputComponent.csproj">
+    <ProjectReference Include="..\InputComponent\HelloMonoGame.Components.InputComponent.csproj">
       <Project>{25E2B45F-AB5B-4B05-871E-38C1BE4C77CB}</Project>
-      <Name>InputComponent</Name>
+      <Name>HelloMonoGame.Components.InputComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelloMonoGame.Common\HelloMonoGame.Common.csproj">
+      <Project>{7A50A013-0E77-4A98-9961-9182AD7A551B}</Project>
+      <Name>HelloMonoGame.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
