@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMonoGame-Android", "He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMonoGame.Common", "HelloMonoGame.Common\HelloMonoGame.Common.csproj", "{7A50A013-0E77-4A98-9961-9182AD7A551B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMonoGame.UI", "HelloMonoGame.UI\HelloMonoGame.UI.csproj", "{E86037B7-9CEA-419A-926C-BFBD0054CE5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -49,5 +51,13 @@ Global
 		{E7B32D5B-00E6-4FF3-8F46-12395F435670}.Release|iPhone.Build.0 = Release|iPhone
 		{E7B32D5B-00E6-4FF3-8F46-12395F435670}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{E7B32D5B-00E6-4FF3-8F46-12395F435670}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Release|iPhone.Build.0 = Release|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E86037B7-9CEA-419A-926C-BFBD0054CE5E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
