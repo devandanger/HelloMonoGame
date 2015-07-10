@@ -35,8 +35,17 @@ namespace HelloMonoGame
             this.Components.Add(inputComponent);
 
 
+            AsyncCallback asyncCallback = new AsyncCallback(AuthenticationResult);
             SignedInGamer signedInGamer = new SignedInGamer();
-            this.SignedInGamerResult = signedInGamer.BeginAuthentication(null, null);
+            signedInGamer.BeginAuthentication(asyncCallback, null);
+            if (signedInGamer.IsSignedInToLive)
+            {
+                System.Console.WriteLine("Connected to live");
+            }
+            else
+            {
+                System.Console.WriteLine("Not connected to live");
+            }
         }
 
         void InputComponent_OnRight()
@@ -73,6 +82,11 @@ namespace HelloMonoGame
         {
             base.Draw(gameTime);
             this.DefaultGraphicsDeviceManager.GraphicsDevice.Clear(backGroundColor);
+        }
+
+        static void AuthenticationResult(IAsyncResult result)
+        {
+            System.Console.WriteLine(result.AsyncState);
         }
     }
 }

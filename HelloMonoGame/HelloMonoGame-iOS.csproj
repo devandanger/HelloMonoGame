@@ -39,9 +39,11 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>17e63ee3-82e2-4239-b1ad-6472d34f4fe0</CodesignProvision>
-    <BuildIpa>true</BuildIpa>
     <IpaPackageName>
     </IpaPackageName>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchI18n>
+    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -72,6 +74,7 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
+    <CodesignProvision>762785a5-c537-4f40-93c0-3fea0fd8361f</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -94,10 +97,11 @@
     <Compile Include="HelloGame.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Info.plist" />
     <None Include="Content\Content.mgcb" />
     <None Include="packages.config" />
     <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="iTunesMetadata.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -117,5 +121,6 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\GameThumbnail.png" />
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\monogame%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\monogame%40retinae.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\GameThumbnail%40120.png" />
   </ItemGroup>
 </Project>
