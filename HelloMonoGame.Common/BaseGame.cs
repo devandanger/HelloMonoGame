@@ -15,6 +15,8 @@ namespace HelloMonoGame.Common
     {
         protected GraphicsDeviceManager DefaultGraphicsDeviceManager { get; set; }
 
+        protected IAsyncResult SignedInGamerResult { get; set; }
+
         public BaseGame()
         {
             this.DefaultGraphicsDeviceManager = new GraphicsDeviceManager(this);

@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using HelloMonoGame.Components.InputComponent;
 using HelloMonoGame.Common;
+using UIKit;
+using Microsoft.Xna.Framework.GamerServices;
 
 #endregion
 
@@ -31,6 +33,10 @@ namespace HelloMonoGame
             inputComponent.OnLeft += InputComponent_OnLeft;
             inputComponent.OnRight += InputComponent_OnRight;
             this.Components.Add(inputComponent);
+
+
+            SignedInGamer signedInGamer = new SignedInGamer();
+            this.SignedInGamerResult = signedInGamer.BeginAuthentication(null, null);
         }
 
         void InputComponent_OnRight()

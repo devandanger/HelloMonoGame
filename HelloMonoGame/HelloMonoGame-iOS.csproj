@@ -37,7 +37,11 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>17e63ee3-82e2-4239-b1ad-6472d34f4fe0</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <IpaPackageName>
+    </IpaPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -76,6 +80,12 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoGame.Framework">
       <HintPath>..\packages\MonoGame.Framework.iOS.3.4.0.459\lib\XamariniOS\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net" Condition=" '$(Platform)' == 'iPhone' ">
+      <HintPath>..\ExternalLibraries\iPhone\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net" Condition=" '$(Platform)' == 'iPhoneSimulator' ">
+      <HintPath>..\ExternalLibraries\iPhoneSimulator\MonoGame.Framework.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
